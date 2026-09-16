@@ -1,0 +1,7 @@
+{
+  "name": "Abyssinia Grand Hotel",
+  "description": "Where Ethiopian hospitality meets modern luxury. Luxury 5-star hotel in Addis Ababa, Ethiopia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

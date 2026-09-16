@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --color-gold-50: #faf7ef;
+  --color-gold-100: #f4ecda;
+  --color-gold-200: #ebd9b5;
+  --color-gold-300: #dfc28d;
+  --color-gold-400: #d3aa67;
+  --color-gold-500: #c59648;
+  --color-gold-600: #ab7a38;
+  --color-gold-700: #8a5d2e;
+  --color-gold-800: #704b2b;
+  --color-gold-900: #5c3e27;
+
+  --color-charcoal-950: #0f0f10;
+  --color-charcoal-900: #171719;
+  --color-charcoal-800: #212124;
+  --color-charcoal-700: #2e2e33;
+  --color-charcoal-600: #424249;
+
+  --color-ivory: #FAF8F5;
+  --color-ivory-subtle: #F3EFE9;
+  --color-ivory-card: #FFFFFF;
+}
+
+/* Base mobile viewport protection */
+html {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom scrollbar and luxury editorial accents */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f3efe8;
+}
+::-webkit-scrollbar-thumb {
+  background: #c59648;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ab7a38;
+}
+
+/* Hide scrollbar for horizontal chip bars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle luxury gold gradient utilities */
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #c59648 0%, #e0c07f 50%, #b8973a 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #dfc28d 0%, #f4ecda 50%, #c59648 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Print voucher formatting */
+@media print {
+  header, footer, nav, button {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+

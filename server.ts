@@ -19,9 +19,14 @@ export function normalizeChatId(raw: string | number | undefined): string {
   return str;
 }
 
-// In-memory runtime override if set via Admin Settings
-let runtimeBotToken = process.env.TELEGRAM_BOT_TOKEN || '';
-let runtimeChatId = normalizeChatId(process.env.TELEGRAM_CHAT_ID) || '6512581908';
+// Default Telegram credentials ensuring deployed instances (Cloud Run / production)
+// dispatch reservations even if custom secrets were omitted during container deployment
+export const DEFAULT_TELEGRAM_BOT_TOKEN = '8983036050:AAEoJyzULDL7hf6GCQ143H7DBH1rEDRPduo';
+export const DEFAULT_TELEGRAM_CHAT_ID = '6512581908';
+
+// In-memory runtime override if set via Admin Settings or environment
+let runtimeBotToken = process.env.TELEGRAM_BOT_TOKEN || DEFAULT_TELEGRAM_BOT_TOKEN;
+let runtimeChatId = normalizeChatId(process.env.TELEGRAM_CHAT_ID || DEFAULT_TELEGRAM_CHAT_ID);
 
 // Data directory for persistent storage
 const DATA_DIR = path.join(process.cwd(), 'data');

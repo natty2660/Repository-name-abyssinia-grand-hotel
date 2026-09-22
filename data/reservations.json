@@ -1,5 +1,61 @@
 [
   {
+    "id": "DLH-99301",
+    "referenceNumber": "DLH-99301",
+    "formData": {
+      "guestName": "Ato Natnael Bezuneh",
+      "email": "natnaelbezuneh000@gmail.com",
+      "phone": "+251900876644",
+      "checkIn": "2026-10-01",
+      "checkOut": "2026-10-05",
+      "adults": 2,
+      "children": 1,
+      "roomType": "presidential-suite",
+      "paymentMethod": "card",
+      "specialRequests": "Deployed website test booking with Wilwal VIP pickup."
+    },
+    "roomName": "Diplomatic Presidential Suite",
+    "roomType": "presidential-suite",
+    "totalNights": 4,
+    "totalPrice": 1720,
+    "status": "pending",
+    "createdAt": "September 22, 2026 at 11:30 AM",
+    "source": "online",
+    "telegramMessageId": 8,
+    "telegramChatId": "6512581908"
+  },
+  {
+    "id": "DLH-10098",
+    "referenceNumber": "DLH-10098",
+    "formData": {
+      "checkIn": "2026-09-22",
+      "checkOut": "2026-09-24",
+      "adults": 2,
+      "children": 0,
+      "roomType": "executive-room",
+      "guestName": "sdfzdgg",
+      "email": "natnaelbezuneh87@gmail.com",
+      "phone": "0987655556",
+      "specialRequests": "",
+      "paymentMethod": "hotel",
+      "isGroupBooking": false,
+      "roomCount": 1,
+      "organizationName": ""
+    },
+    "roomName": "Executive Business Suite",
+    "roomType": "executive-room",
+    "totalNights": 2,
+    "totalPrice": 288,
+    "status": "confirmed",
+    "createdAt": "Sep 22, 2026 at 02:13 PM",
+    "source": "online",
+    "telegramMessageId": 7,
+    "telegramChatId": "6512581908",
+    "approvedAt": "2026-09-22T11:14:28.105Z",
+    "adminNotes": "Approved by Natnael (Telegram) via Telegram Bot on 9/22/2026, 2:14:28 PM EAT",
+    "approvalMessage": "Dear sdfzdgg, greetings from Duule Luxury Hotel in Jijiga! Your reservation (DLH-10098) has been officially APPROVED & CONFIRMED by our reception management. Your Executive Business Suite is reserved from 2026-09-22 to 2026-09-24. Our concierge team has logged your itinerary and scheduled complimentary Wilwal Airport (JIJ) chauffeur pickup upon your flight arrival. We look forward to welcoming you!"
+  },
+  {
     "id": "DLH-88219",
     "referenceNumber": "DLH-88219",
     "formData": {

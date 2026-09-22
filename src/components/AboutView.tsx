@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageId } from '../types';
 import { HOTEL_STATS, SUSTAINABILITY_POINTS, HOTEL_INFO } from '../data/hotelData';
+import { HOTEL_IMAGES } from '../assets/images';
 import {
   Sparkles,
   HeartHandshake,
@@ -12,6 +13,7 @@ import {
   ArrowRight,
   Coffee,
   Globe2,
+  Waves,
 } from 'lucide-react';
 
 interface AboutViewProps {
@@ -26,14 +28,14 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C59648] font-semibold mb-3">
             <span className="w-6 h-[1px] bg-[#C59648]" />
-            <span>Our Heritage</span>
+            <span>Our Heritage &amp; Architecture</span>
             <span className="w-6 h-[1px] bg-[#C59648]" />
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#171615] font-normal mb-4 sm:mb-6 leading-tight">
-            The Soul of Abyssinian Hospitality
+            The Architectural Crown of Jijiga
           </h1>
           <p className="text-sm sm:text-lg text-[#5D564A] leading-relaxed font-light">
-            Founded with a vision to share Ethiopia’s legendary warmth, culture, and ancient traditions with the world’s most discerning travelers.
+            Designed by Rio Architects, Duule Luxury Hotel merges iconic curved blue-glass architecture, heated indoor wellness, and warm Somali-Ethiopian hospitality in the heart of the Somali Regional State.
           </p>
         </div>
       </div>
@@ -44,19 +46,19 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
           <div className="lg:col-span-6 relative">
             <div className="rounded-[2px] overflow-hidden shadow-2xl border-2 sm:border-4 border-white">
               <img
-                src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=85"
-                alt="Abyssinia Grand Hotel Architecture"
+                src={HOTEL_IMAGES.daylightFacade}
+                alt="Duule Luxury Hotel Curved Glass Architecture in Jijiga"
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 className="w-full h-72 sm:h-[460px] lg:h-[520px] object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-[#171615] text-white p-6 sm:p-7 rounded-[2px] shadow-2xl border border-[#33302B] max-w-xs hidden sm:block">
+            <div className="absolute -bottom-6 -right-6 bg-[#0C1A27] text-white p-6 sm:p-7 rounded-[2px] shadow-2xl border border-[#1A3852] max-w-xs hidden sm:block">
               <span className="text-xs uppercase tracking-[0.2em] text-[#D3AA67] font-semibold block mb-1.5">
-                Rooted in Addis Ababa
+                Designed by Rio Architects
               </span>
-              <p className="text-xs text-[#B8AFA2] leading-relaxed font-light">
-                A beacon of architectural grace situated at the crossroads of African diplomacy and cultural preservation.
+              <p className="text-xs text-[#A6BFD3] leading-relaxed font-light">
+                An architectural masterpiece featuring a curved azure glass curtain wall and double-height entrance columns defining the Jijiga skyline.
               </p>
             </div>
           </div>
@@ -64,25 +66,25 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
           <div className="lg:col-span-6 space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C59648] font-semibold">
               <span className="w-6 h-[1px] bg-[#C59648]" />
-              <span>Chapter I &bull; The Origin</span>
+              <span>Chapter I &bull; The Vision</span>
             </div>
 
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#171615] font-normal leading-tight">
-              Honoring an Ancient Land of Warmth, Coffee &amp; Sanctuary
+              Elevating the Somali Region with Five-Star Distinction
             </h2>
 
             <p className="text-sm sm:text-base text-[#555047] leading-relaxed font-light">
-              Ethiopia is the cradle of humanity and the historic birthplace of coffee. For millennia, travelers crossing the Horn of Africa were welcomed with open hearths, freshly washed feet, and the ceremonial pour of coffee—an unhurried declaration that in Ethiopia, a guest is never a stranger, but an honored blessing.
+              Jijiga is a vibrant commercial and diplomatic gateway in the Horn of Africa, rich with trading history and cultural pride. Duule Luxury Hotel was created to provide this dynamic region with a world-class hospitality sanctuary that rivals premier international hotels.
             </p>
 
             <p className="text-xs sm:text-sm text-[#6B6458] leading-relaxed font-light">
-              Abyssinia Grand Hotel was established over sixteen years ago to translate that profound cultural ethos into an uncompromising five-star luxury hotel experience. Built using locally quarried limestone, bespoke native wanza and kosso wood cabinetry, and handwoven Arba Minch cotton, every corridor reflects timeless African grandeur.
+              Conceived in partnership with renowned Rio Architects, our building features a signature curved azure-blue glass facade, an Italian cream marble reception lounge with back-lit golden onyx, and a serene heated indoor swimming pool. Every element is tailored for diplomatic delegates, visiting delegations, and celebrating families.
             </p>
 
             <div className="p-5 sm:p-6 bg-[#FAF6EE] rounded-[2px] border-l-2 border-[#C59648] space-y-1.5">
               <h4 className="font-serif text-base sm:text-lg text-[#171615]">Our Guiding Philosophy</h4>
               <p className="text-xs sm:text-sm text-[#6B6458] italic leading-relaxed">
-                &ldquo;True luxury is not merely flawless marble or high thread counts; it is the feeling of being genuinely known, anticipated, and cherished by the hands that welcome you.&rdquo;
+                &ldquo;True luxury combines breathtaking architecture with the genuine warmth of welcoming every traveler as an honored guest in Jijiga.&rdquo;
               </p>
             </div>
           </div>
@@ -94,10 +96,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
             <span className="text-xs uppercase tracking-[0.25em] text-[#C59648] font-semibold mb-2 block">
-              Our Mission
+              Our Pillars
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#171615] font-normal">
-              Four Pillars of Our Grand Standard
+              Four Foundations of Duule Luxury Hotel
             </h2>
           </div>
 
@@ -107,10 +109,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
                 <HeartHandshake className="w-6 h-6" />
               </div>
               <h3 className="font-serif text-lg sm:text-xl text-[#171615] font-medium mb-2.5">
-                Ethiopian Hospitality
+                Somali-Ethiopian Hospitality
               </h3>
               <p className="text-xs sm:text-sm text-[#6B6458] leading-relaxed font-light">
-                Warm, attentive, and authentic. We greet every arriving traveler as our most honored guest with traditional care and heartfelt kindness.
+                Generous, respectful, and attentive. We greet every arriving guest with traditional cardamom milk tea, single-origin coffee, and dedicated personalized care.
               </p>
             </div>
 
@@ -119,10 +121,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
                 <Building2 className="w-6 h-6" />
               </div>
               <h3 className="font-serif text-lg sm:text-xl text-[#171615] font-medium mb-2.5">
-                Modern Facilities
+                Landmark Architecture
               </h3>
               <p className="text-xs sm:text-sm text-[#6B6458] leading-relaxed font-light">
-                Dual redundant fiber optics, smart climate systems, heated skyline pool, high-altitude fitness suite, and international conference technology.
+                Rio Architects design featuring curved blue glass, heated indoor swimming pool, cedar sauna, and two column-free grand event centers.
               </p>
             </div>
 
@@ -131,10 +133,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
                 <Users2 className="w-6 h-6" />
               </div>
               <h3 className="font-serif text-lg sm:text-xl text-[#171615] font-medium mb-2.5">
-                Professional Service
+                Diplomatic &amp; VIP Service
               </h3>
               <p className="text-xs sm:text-sm text-[#6B6458] leading-relaxed font-light">
-                Multilingual concierge staff fluent in Amharic, English, French, Arabic, and Mandarin, trained to international luxury butler standards.
+                Multilingual staff fluent in Somali, Amharic, English, and Arabic, catering to international organizations, summit delegations, and wedding banquets.
               </p>
             </div>
 
@@ -143,10 +145,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
                 <Leaf className="w-6 h-6" />
               </div>
               <h3 className="font-serif text-lg sm:text-xl text-[#171615] font-medium mb-2.5">
-                Green Stewardship
+                Regional Stewardship
               </h3>
               <p className="text-xs sm:text-sm text-[#6B6458] leading-relaxed font-light">
-                Direct highland organic farming partnerships, 100% renewable hydroelectric and solar heating, and zero single-use plastics across our hotel.
+                100% Halal certified kitchens supporting local Somali and Ethiopian farmers, solar-assisted water heating, and career training for regional youth.
               </p>
             </div>
           </div>
@@ -155,17 +157,17 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
 
       {/* 4. Hotel Statistics */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-28">
-        <div className="bg-[#171615] text-[#FAF8F5] p-6 sm:p-12 lg:p-16 rounded-[2px] border border-[#33302B] shadow-2xl">
+        <div className="bg-[#0C1A27] text-[#FAF8F5] p-6 sm:p-12 lg:p-16 rounded-[2px] border border-[#1A3852] shadow-2xl">
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
             <span className="text-xs uppercase tracking-[0.25em] text-[#C59648] font-semibold block mb-2">
-              Our Journey in Numbers
+              By The Numbers
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl font-normal text-white">
-              An Established Benchmark of African Hospitality
+              The Premier Hospitality Destination in Jijiga
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-[#2B2824]">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-[#1A3852]">
             {HOTEL_STATS.map((stat, i) => (
               <div key={i} className="pt-4 lg:pt-0 px-2 sm:px-4">
                 <span className="block font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-[#D3AA67] mb-1.5">
@@ -174,7 +176,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
                 <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-white mb-0.5">
                   {stat.label}
                 </h4>
-                <p className="text-[11px] sm:text-xs text-[#8C8375]">
+                <p className="text-[11px] sm:text-xs text-[#A6BFD3]">
                   {stat.sublabel}
                 </p>
               </div>
@@ -189,15 +191,15 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
           <div className="lg:col-span-6 space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C59648] font-semibold">
               <span className="w-6 h-[1px] bg-[#C59648]" />
-              <span>Eco-Responsible Tourism</span>
+              <span>Community &amp; Ecology</span>
             </div>
 
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#171615] font-normal leading-tight">
-              Caring For Our Communities &amp; Ethiopian Ecology
+              Empowering Jijiga &amp; Preserving Regional Resources
             </h2>
 
             <p className="text-sm sm:text-base text-[#555047] leading-relaxed font-light">
-              We consider ourselves custodians of Ethiopia’s pristine natural wonders and precious cultural arts. Every cup of coffee served and every linen washed is done with deep mindfulness toward environmental impact.
+              We actively invest in the development of our home city, Jijiga. From supporting regional pastoralists and farmers to introducing energy-efficient architectural innovations, we take our role seriously.
             </p>
 
             <div className="space-y-3.5 pt-2">
@@ -216,15 +218,15 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
 
           <div className="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-4">
             <img
-              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80"
-              alt="Highland Coffee Heritage"
+              src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80"
+              alt="Heated Indoor Pool at Duule"
               referrerPolicy="no-referrer"
               loading="lazy"
               className="w-full h-48 sm:h-72 object-cover rounded-[2px] shadow-md hover:scale-105 transition-transform duration-500"
             />
             <img
-              src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80"
-              alt="Sustainable Resort Grounds"
+              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80"
+              alt="Sauna and Spa at Duule"
               referrerPolicy="no-referrer"
               loading="lazy"
               className="w-full h-48 sm:h-72 object-cover rounded-[2px] shadow-md mt-4 sm:mt-6 hover:scale-105 transition-transform duration-500"
@@ -236,10 +238,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
       {/* 6. Contact & Book CTA */}
       <section className="text-center py-12 sm:py-16 border-t border-[#EAE5DC] max-w-4xl mx-auto px-4">
         <h3 className="font-serif text-2xl sm:text-4xl text-[#171615] mb-3 sm:mb-4">
-          Experience Abyssinia Grand Hotel In Person
+          Experience Duule Luxury Hotel In Person
         </h3>
         <p className="text-xs sm:text-base text-[#6B6458] mb-8 sm:mb-10 max-w-xl mx-auto font-light leading-relaxed">
-          Our team is on call 24 hours a day to assist with room selection, personalized itineraries, and airport transfers.
+          Our concierge team is available 24 hours a day to assist with room selections, event bookings, and Wilwal Airport transfers.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
           <button

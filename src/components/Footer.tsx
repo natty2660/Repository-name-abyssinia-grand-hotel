@@ -50,24 +50,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Col 1: Brand & Heritage */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-[2px] bg-gradient-to-br from-[#D3AA67] to-[#8A5D2E] p-[1px] flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-[2px] bg-gradient-to-br from-[#D3AA67] via-[#C59648] to-[#143D59] p-[1px] flex items-center justify-center shrink-0">
                 <div className="w-full h-full bg-[#121110] flex flex-col items-center justify-center">
-                  <span className="font-serif text-[#FAF8F5] text-lg font-bold leading-none">A</span>
-                  <span className="text-[7px] tracking-[0.2em] text-[#C59648] uppercase font-sans font-semibold">GRAND</span>
+                  <span className="font-serif text-[#FAF8F5] text-lg font-bold leading-none">D</span>
+                  <span className="text-[7px] tracking-[0.2em] text-[#C59648] uppercase font-sans font-semibold">5-STAR</span>
                 </div>
               </div>
               <div>
                 <span className="block font-serif text-xl font-bold tracking-wider text-[#FAF8F5]">
-                  ABYSSINIA
+                  DUULE
                 </span>
-                <span className="block text-[10px] tracking-[0.25em] text-[#A69D8F] uppercase font-sans">
-                  Grand Hotel
+                <span className="block text-[10px] tracking-[0.25em] text-[#A6BFD3] uppercase font-sans">
+                  Luxury Hotel &bull; Jijiga
                 </span>
               </div>
             </div>
 
             <p className="text-sm text-[#A69D8F] leading-relaxed font-light">
-              Where timeless Ethiopian hospitality meets contemporary world-class luxury. Set in the heart of Addis Ababa’s Kazanchis district.
+              Jijiga’s premier 5-star landmark hotel designed by Rio Architects. Featuring iconic curved blue-glass architecture, heated indoor pool, grand event centers, and authentic hospitality.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
@@ -137,6 +137,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   <ArrowRight className="w-3 h-3" />
                 </button>
               </li>
+              <li>
+                <button
+                  onClick={() => handleNav('admin')}
+                  className="text-[#99B6CE] hover:text-white transition-colors text-xs flex items-center gap-1.5 pt-1 border-t border-[#252320]"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#0088cc]" />
+                  <span>Reception Admin Portal (Option C)</span>
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -168,7 +177,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li className="pt-1">
                 <a
-                  href={`https://wa.me/${HOTEL_INFO.whatsappNumber}?text=Hello%20Abyssinia%20Grand%20Hotel,%20I%20would%20like%20to%20inquire%20about%20a%20booking.`}
+                  href={`https://wa.me/${HOTEL_INFO.whatsappNumber}?text=Hello%20Duule%20Luxury%20Hotel,%20I%20would%20like%20to%20inquire%20about%20a%20booking.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-[2px] bg-[#1C2C1D] text-[#25D366] text-xs font-semibold hover:bg-[#254228] transition-colors border border-[#25D366]/30 active:scale-95 max-w-full"
@@ -183,10 +192,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Col 4: Newsletter & Exclusive Inquiries */}
           <div className="space-y-4">
             <h3 className="text-xs uppercase tracking-[0.25em] text-[#C59648] font-bold">
-              The Grand Chronicle
+              The Duule Chronicle
             </h3>
             <p className="text-xs text-[#A69D8F] leading-relaxed font-light">
-              Receive private invitations to seasonal culinary events, Ethiopian cultural evenings, and exclusive suite privileges.
+              Receive private invitations to seasonal culinary events, cultural evenings, diplomatic summit updates, and executive suite privileges.
             </p>
 
             <form onSubmit={handleNewsletterSubmit} className="space-y-2.5">
@@ -226,7 +235,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </div>
               <div className="flex items-center gap-1.5">
                 <Award className="w-4 h-4 text-[#C59648] shrink-0" />
-                <span>Best City Hotel Addis Ababa</span>
+                <span>Best Luxury Hotel in Jijiga</span>
               </div>
             </div>
           </div>
@@ -235,13 +244,20 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         {/* Bottom copyright and disclaimer */}
         <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-xs text-[#7A7369]">
           <p>
-            &copy; {new Date().getFullYear()} Abyssinia Grand Hotel. Addis Ababa, Ethiopia. All rights reserved.
+            &copy; {new Date().getFullYear()} Duule Luxury Hotel. Jijiga, Somali Region, Ethiopia. Architecture by Rio Architects. All rights reserved.
           </p>
 
           <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 sm:gap-6">
-            <span className="text-[#A69D8F] bg-[#1A1917] px-3 py-1 rounded-[2px] border border-[#2B2824]">
-              Portfolio Demo Showcase
+            <span className="text-[#D3AA67] bg-[#1A1917] px-3 py-1 rounded-[2px] border border-[#3A3326] flex items-center gap-1.5 font-medium text-[11px]">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              Direct Booking Official Portal
             </span>
+            <button
+              onClick={() => handleNav('admin')}
+              className="text-[#D3AA67] hover:text-white transition-colors underline underline-offset-4 flex items-center gap-1"
+            >
+              <span>Staff Reception Portal</span>
+            </button>
             <button
               onClick={() => handleNav('contact')}
               className="hover:text-[#E0DACF] transition-colors"

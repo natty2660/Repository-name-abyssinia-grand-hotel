@@ -11,6 +11,7 @@ import {
   MessageCircle,
   MapPin,
   Clock,
+  LayoutDashboard,
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -21,7 +22,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [addisTime, setAddisTime] = useState('');
+  const [jijigaTime, setJijigaTime] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Update Addis Ababa local time (East Africa Time: UTC+3)
+  // Update Jijiga local time (East Africa Time: UTC+3)
   useEffect(() => {
     const updateTime = () => {
       try {
@@ -43,9 +44,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           minute: '2-digit',
           hour12: true,
         });
-        setAddisTime(formatter.format(now));
+        setJijigaTime(formatter.format(now));
       } catch {
-        setAddisTime('Addis Ababa');
+        setJijigaTime('Jijiga');
       }
     };
     updateTime();
@@ -71,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top micro bar for phone, location, Addis Ababa time, and WhatsApp */}
+      {/* Top micro bar for phone, location, Jijiga time, and WhatsApp */}
       <div
         className={`hidden lg:block transition-all duration-300 text-[11px] tracking-wider border-b border-[#2A2722] ${
           isScrolled
@@ -83,16 +84,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-[#C59648]" />
-              <span>Kazanchis, Bole Road, Addis Ababa</span>
+              <span>Main Boulevard near Sayidka Monument, Jijiga</span>
             </div>
-            {addisTime && (
+            {jijigaTime && (
               <div className="flex items-center gap-2 text-[#D8D0C3]">
                 <Clock className="w-3.5 h-3.5 text-[#C59648]" />
-                <span>Addis Ababa Time: <strong className="text-[#FAF8F5] font-semibold">{addisTime} (EAT)</strong></span>
+                <span>Jijiga Time: <strong className="text-[#FAF8F5] font-semibold">{jijigaTime} (EAT)</strong></span>
               </div>
             )}
             <div className="flex items-center gap-2 text-[#9A9082]">
-              <span>24/7 Diplomatic Concierge &bull; Curbside VIP Service</span>
+              <span>Architecture by Rio Architects &bull; Wilwal Airport Transfers</span>
             </div>
           </div>
           <div className="flex items-center gap-6">
@@ -106,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             </a>
             <span className="text-[#3A3631]">|</span>
             <a
-              href={`https://wa.me/${HOTEL_INFO.whatsappNumber}?text=Hello%20Abyssinia%20Grand%20Hotel,%20I%20would%20like%20to%20inquire%20about%20a%20reservation.`}
+              href={`https://wa.me/${HOTEL_INFO.whatsappNumber}?text=Hello%20Duule%20Luxury%20Hotel,%20I%20would%20like%20to%20inquire%20about%20a%20reservation.`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-[#25D366] hover:text-[#3ce679] transition-colors"
@@ -115,6 +116,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               <MessageCircle className="w-3.5 h-3.5" />
               <span className="text-[#E0DACF] hover:text-white font-medium">WhatsApp Concierge</span>
             </a>
+            <span className="text-[#3A3631]">|</span>
+            <button
+              onClick={() => handleNavClick('admin')}
+              className="flex items-center gap-1.5 text-[#99B6CE] hover:text-[#C59648] transition-colors"
+              title="Hotel Front Desk Reception Portal (PIN: 1234)"
+            >
+              <LayoutDashboard className="w-3.5 h-3.5 text-[#0088cc]" />
+              <span>Front Desk</span>
+            </button>
           </div>
         </div>
       </div>
@@ -123,8 +133,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
       <nav
         className={`transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#121110]/95 backdrop-blur-md py-3.5 shadow-2xl border-b border-[#292621]'
-            : 'bg-[#151413]/90 backdrop-blur-sm py-4 border-b border-[#2C2924]'
+            ? 'bg-[#0F1E2E]/95 backdrop-blur-md py-3.5 shadow-2xl border-b border-[#1A3852]'
+            : 'bg-[#102334]/90 backdrop-blur-sm py-4 border-b border-[#18364E]'
         }`}
         aria-label="Main Navigation"
       >
@@ -133,25 +143,25 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           <button
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-2 sm:gap-3.5 group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C59648] shrink-0"
-            aria-label="Abyssinia Grand Hotel Home"
+            aria-label="Duule Luxury Hotel Home"
           >
             {/* Elegant Hotel Emblem */}
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-[2px] bg-gradient-to-br from-[#D3AA67] via-[#C59648] to-[#8A5D2E] p-[1px] flex items-center justify-center shadow-lg shrink-0">
-              <div className="w-full h-full bg-[#151413] flex flex-col items-center justify-center text-center">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-[2px] bg-gradient-to-br from-[#D3AA67] via-[#C59648] to-[#143D59] p-[1px] flex items-center justify-center shadow-lg shrink-0">
+              <div className="w-full h-full bg-[#0C1A27] flex flex-col items-center justify-center text-center">
                 <span className="font-serif text-[#FAF8F5] text-sm sm:text-lg font-bold leading-none tracking-widest group-hover:text-[#D3AA67] transition-colors">
-                  A
+                  D
                 </span>
                 <span className="text-[6px] sm:text-[7px] tracking-[0.2em] text-[#C59648] uppercase font-sans font-semibold">
-                  GRAND
+                  5-STAR
                 </span>
               </div>
             </div>
             <div>
               <span className="block font-serif text-lg sm:text-2xl font-medium tracking-[0.08em] sm:tracking-[0.12em] text-[#FAF8F5] group-hover:text-[#D3AA67] transition-colors leading-tight">
-                ABYSSINIA
+                DUULE
               </span>
-              <span className="block text-[8px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.28em] text-[#A69D8F] uppercase font-sans font-medium">
-                Grand Hotel &bull; Addis Ababa
+              <span className="block text-[8px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.28em] text-[#A6BFD3] uppercase font-sans font-medium">
+                Luxury Hotel &bull; Jijiga
               </span>
             </div>
           </button>
@@ -222,13 +232,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           style={{ animationDuration: '200ms' }}
         >
           <div className="px-5 sm:px-6 py-5 space-y-3">
-            {addisTime && (
+            {jijigaTime && (
               <div className="pb-3 mb-2 border-b border-[#252320] flex items-center justify-between text-xs text-[#B8AFA2]">
                 <span className="flex items-center gap-2">
                   <Clock className="w-3.5 h-3.5 text-[#C59648]" />
-                  <span>Addis Ababa (EAT)</span>
+                  <span>Jijiga, Ethiopia (EAT)</span>
                 </span>
-                <span className="text-[#FAF8F5] font-semibold">{addisTime}</span>
+                <span className="text-[#FAF8F5] font-semibold">{jijigaTime}</span>
               </div>
             )}
 
@@ -279,13 +289,25 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               <div className="flex items-center gap-2.5">
                 <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
                 <a
-                  href={`https://wa.me/${HOTEL_INFO.whatsappNumber}?text=Hello%20Abyssinia%20Grand%20Hotel,%20I%20would%20like%20to%20inquire%20about%20a%20stay.`}
+                  href={`https://wa.me/${HOTEL_INFO.whatsappNumber}?text=Hello%20Duule%20Luxury%20Hotel,%20I%20would%20like%20to%20inquire%20about%20a%20stay.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#25D366] hover:underline font-medium"
                 >
                   WhatsApp Concierge Chat
                 </a>
+              </div>
+              <div className="pt-2 border-t border-[#252320]">
+                <button
+                  onClick={() => handleNavClick('admin')}
+                  className="w-full py-2.5 px-3 bg-[#1A2633] text-[#99B6CE] hover:text-white rounded-[2px] text-xs flex items-center justify-between border border-[#2B4055]"
+                >
+                  <span className="flex items-center gap-2">
+                    <LayoutDashboard className="w-4 h-4 text-[#0088cc]" />
+                    <span>Front Desk Reception Desk</span>
+                  </span>
+                  <span className="text-[10px] text-[#C59648] font-mono">PIN: 1234</span>
+                </button>
               </div>
             </div>
           </div>

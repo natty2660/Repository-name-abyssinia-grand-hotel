@@ -10,6 +10,7 @@ import { DiningView } from './components/DiningView';
 import { GalleryView } from './components/GalleryView';
 import { ContactView } from './components/ContactView';
 import { BookingView } from './components/BookingView';
+import { AdminDashboard } from './components/AdminDashboard';
 import { Lightbox } from './components/Lightbox';
 
 export default function App() {
@@ -33,7 +34,7 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '').toLowerCase();
-      const validPages: PageId[] = ['home', 'rooms', 'about', 'dining', 'gallery', 'contact', 'booking'];
+      const validPages: PageId[] = ['home', 'rooms', 'about', 'dining', 'gallery', 'contact', 'booking', 'admin'];
       if (validPages.includes(hash as PageId)) {
         setCurrentPage(hash as PageId);
       }
@@ -130,6 +131,10 @@ export default function App() {
             initialGuests={searchParams.guests}
             onNavigate={handleNavigate}
           />
+        )}
+
+        {currentPage === 'admin' && (
+          <AdminDashboard onNavigate={handleNavigate} />
         )}
       </main>
 

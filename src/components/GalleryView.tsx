@@ -36,10 +36,10 @@ export const GalleryView: React.FC<GalleryViewProps> = ({ onOpenLightbox }) => {
             <span className="w-6 h-[1px] bg-[#C59648]" />
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#171615] font-normal mb-4 sm:mb-6 leading-tight">
-            Moments at Abyssinia Grand
+            Moments at Duule Luxury Hotel
           </h1>
           <p className="text-sm sm:text-lg text-[#5D564A] leading-relaxed font-light">
-            Explore the architecture, luminous spaces, private suites, and authentic Ethiopian ambiance awaiting you in Addis Ababa.
+            Explore the Rio Architects curved glass facade, luminous marble lobby, heated indoor pool, and elegant suites awaiting you in Jijiga.
           </p>
         </div>
 

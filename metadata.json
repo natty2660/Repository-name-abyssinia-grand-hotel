@@ -1,6 +1,6 @@
 {
-  "name": "Abyssinia Grand Hotel",
-  "description": "Where Ethiopian hospitality meets modern luxury. Luxury 5-star hotel in Addis Ababa, Ethiopia.",
+  "name": "Duule Luxury Hotel",
+  "description": "5-Star landmark luxury hotel in Jijiga, Ethiopia. Featuring curved blue-glass architecture by Rio Architects, executive suites, indoor pool, spa, and fine dining.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

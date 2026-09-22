@@ -23,7 +23,7 @@ interface DiningViewProps {
 export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
   const [selectedVenue, setSelectedVenue] = useState<DiningVenue | null>(null);
   const [reservationModalOpen, setReservationModalOpen] = useState(false);
-  const [reserveVenueName, setReserveVenueName] = useState('Enat Ethiopian Fine Dining');
+  const [reserveVenueName, setReserveVenueName] = useState('Duule Grand Restaurant');
   const [reserveDate, setReserveDate] = useState(new Date().toISOString().split('T')[0]);
   const [reserveTime, setReserveTime] = useState('19:30');
   const [reserveGuests, setReserveGuests] = useState('2');
@@ -71,10 +71,10 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
             <span className="w-6 h-[1px] bg-[#C59648]" />
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#171615] font-normal mb-4 sm:mb-6 leading-tight">
-            The Art of Abyssinian Dining
+            The Art of Somali &amp; Ethiopian Dining
           </h1>
           <p className="text-sm sm:text-lg text-[#5D564A] leading-relaxed font-light">
-            From the time-honored slow-simmered aromas of highland berbere to contemporary international fine dining, every culinary moment at Abyssinia Grand is an elevated sensory journey.
+            From authentic Somali camel delicacies, spiced goat suqaar, and aromatic basmati to traditional Ethiopian coffee and tea rituals, every culinary moment at Duule Luxury Hotel is an elevated journey.
           </p>
         </div>
       </div>
@@ -103,7 +103,7 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-4 sm:top-6 left-4 sm:left-6 bg-[#171615]/90 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-[2px] border border-[#3A3631] text-xs text-white shadow-lg">
+                <div className="absolute top-4 sm:top-6 left-4 sm:left-6 bg-[#0C1A27]/90 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-[2px] border border-[#1A3852] text-xs text-white shadow-lg">
                   <span className="text-[#D3AA67] uppercase tracking-[0.2em] font-bold text-[10px] sm:text-[11px]">
                     {venue.cuisine}
                   </span>
@@ -172,7 +172,7 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
                 <div className="pt-5 sm:pt-6 border-t border-[#F0ECE4] flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                   <button
                     onClick={() => handleOpenReserveModal(venue.name)}
-                    className="w-full sm:w-auto px-7 py-3.5 sm:py-4 min-h-[48px] bg-[#171615] hover:bg-[#C59648] hover:text-[#121110] text-white text-xs uppercase font-bold tracking-[0.2em] rounded-[2px] transition-all shadow-md flex items-center justify-center gap-2 hover:-translate-y-0.5 active:scale-95 text-center"
+                    className="w-full sm:w-auto px-7 py-3.5 sm:py-4 min-h-[48px] bg-[#0C1A27] hover:bg-[#C59648] hover:text-[#121110] text-white text-xs uppercase font-bold tracking-[0.2em] rounded-[2px] transition-all shadow-md flex items-center justify-center gap-2 hover:-translate-y-0.5 active:scale-95 text-center"
                   >
                     <Calendar className="w-4 h-4" />
                     <span>Reserve a Table</span>
@@ -202,7 +202,7 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
               Operating Hours &amp; Reservation Guidelines
             </h3>
             <p className="text-xs sm:text-sm text-[#6B6458] mt-2 font-light">
-              Reservations are strongly advised for dinner at Enat and evening sunset cocktail sessions at Abyssinia Sky Lounge.
+              Reservations are recommended for dinner at Duule Grand Restaurant and private banquets in the VIP salon.
             </p>
           </div>
 
@@ -210,25 +210,32 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
           <div className="sm:hidden space-y-3.5">
             {[
               {
-                venue: 'Sunrise Terrazza',
-                service: 'Breakfast Buffet & Bakery',
+                venue: 'Sunrise Buffet & Bakery',
+                service: 'Breakfast Buffet, Malawax & Fruit',
                 hours: '6:00 AM – 11:00 AM Daily',
                 dress: 'Casual',
                 note: 'Walk-in Welcome',
               },
               {
-                venue: 'Enat Ethiopian Fine Dining',
-                service: 'Lunch, Dinner & Buna Ritual',
-                hours: '12:00 PM – 11:00 PM Daily',
+                venue: 'Duule Grand Restaurant',
+                service: 'Somali & Ethiopian Fine Dining',
+                hours: '11:30 AM – 11:00 PM Daily',
                 dress: 'Smart Casual',
                 note: 'Reservations Advised',
               },
               {
-                venue: 'Abyssinia Sky Lounge & Bar',
-                service: 'Tapas, Steaks & Sunset Cocktails',
-                hours: '4:00 PM – 1:00 AM Daily',
+                venue: 'Duule Skyline Lounge',
+                service: 'Sunset Views & Artisan Mocktails',
+                hours: '4:00 PM – Midnight Daily',
                 dress: 'Smart Casual',
                 note: 'Reservations Recommended',
+              },
+              {
+                venue: 'Spiced Tea & Coffee Lounge',
+                service: 'Traditional Shaah Cadays & Harar Coffee',
+                hours: '7:00 AM – 10:00 PM Daily',
+                dress: 'Casual',
+                note: 'Walk-in Welcome',
               },
               {
                 venue: 'In-Room Suite Dining',
@@ -268,25 +275,32 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
               </thead>
               <tbody className="divide-y divide-[#EAE3D5] text-[#555047]">
                 <tr>
-                  <td className="py-4 px-4 font-medium text-[#171615]">Sunrise Terrazza</td>
-                  <td className="py-4 px-4">Breakfast Buffet &amp; Bakery</td>
+                  <td className="py-4 px-4 font-medium text-[#171615]">Sunrise Buffet &amp; Bakery</td>
+                  <td className="py-4 px-4">Breakfast Buffet, Malawax &amp; Fruit</td>
                   <td className="py-4 px-4">6:00 AM – 11:00 AM Daily</td>
                   <td className="py-4 px-4">Casual</td>
                   <td className="py-4 px-4">Walk-in Welcome</td>
                 </tr>
                 <tr>
-                  <td className="py-4 px-4 font-medium text-[#171615]">Enat Ethiopian Fine Dining</td>
-                  <td className="py-4 px-4">Lunch, Dinner &amp; Coffee Ritual</td>
-                  <td className="py-4 px-4">12:00 PM – 11:00 PM Daily</td>
+                  <td className="py-4 px-4 font-medium text-[#171615]">Duule Grand Restaurant</td>
+                  <td className="py-4 px-4">Somali &amp; Ethiopian Fine Dining</td>
+                  <td className="py-4 px-4">11:30 AM – 11:00 PM Daily</td>
                   <td className="py-4 px-4">Smart Casual</td>
                   <td className="py-4 px-4">Reservations Advised</td>
                 </tr>
                 <tr>
-                  <td className="py-4 px-4 font-medium text-[#171615]">Abyssinia Sky Lounge &amp; Bar</td>
-                  <td className="py-4 px-4">Tapas, Steaks &amp; Sunset Cocktails</td>
-                  <td className="py-4 px-4">4:00 PM – 1:00 AM Daily</td>
+                  <td className="py-4 px-4 font-medium text-[#171615]">Duule Skyline Lounge</td>
+                  <td className="py-4 px-4">Sunset Views &amp; Artisan Mocktails</td>
+                  <td className="py-4 px-4">4:00 PM – Midnight Daily</td>
                   <td className="py-4 px-4">Smart Casual</td>
                   <td className="py-4 px-4">Reservations Recommended</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-4 font-medium text-[#171615]">Spiced Tea &amp; Coffee Lounge</td>
+                  <td className="py-4 px-4">Shaah Cadays &amp; Harar Coffee Ritual</td>
+                  <td className="py-4 px-4">7:00 AM – 10:00 PM Daily</td>
+                  <td className="py-4 px-4">Casual</td>
+                  <td className="py-4 px-4">Walk-in Welcome</td>
                 </tr>
                 <tr>
                   <td className="py-4 px-4 font-medium text-[#171615]">In-Room Suite Dining</td>
@@ -333,7 +347,7 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
                   <strong>{reserveDate}</strong> at <strong>{reserveTime}</strong> has been received by our head maître d'.
                 </p>
                 <div className="p-3 bg-[#FAF6EE] text-[11px] text-[#7E6324] rounded-[2px] border border-[#E5DAC0]">
-                  This is a live portfolio preview. Our culinary concierge has logged your table preferences.
+                  This is a live preview. Our culinary concierge has logged your table preferences.
                 </div>
                 <button
                   onClick={() => setReservationModalOpen(false)}
@@ -359,9 +373,10 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
                       onChange={(e) => setReserveVenueName(e.target.value)}
                       className="w-full px-3.5 py-3 border border-[#D1CAC0] rounded-[2px] bg-[#FAF8F5] focus:outline-none focus:border-[#C59648] min-h-[44px]"
                     >
-                      <option value="Enat Ethiopian Fine Dining">Enat Ethiopian Fine Dining</option>
-                      <option value="Sunrise Terrazza & Breakfast">Sunrise Terrazza</option>
-                      <option value="Abyssinia Sky Lounge & Bar">Abyssinia Sky Lounge &amp; Bar</option>
+                      <option value="Duule Grand Restaurant">Duule Grand Restaurant</option>
+                      <option value="Sunrise Buffet & Bakery">Sunrise Buffet &amp; Bakery</option>
+                      <option value="Duule Skyline Lounge">Duule Skyline Lounge</option>
+                      <option value="Spiced Tea & Coffee Lounge">Spiced Tea &amp; Coffee Lounge</option>
                     </select>
                   </div>
 
@@ -385,7 +400,7 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
                       >
                         <option value="12:30">12:30 PM (Lunch)</option>
                         <option value="13:30">1:30 PM (Lunch)</option>
-                        <option value="16:00">4:00 PM (Buna Coffee Ritual)</option>
+                        <option value="16:00">4:00 PM (Shaah &amp; Coffee Ritual)</option>
                         <option value="18:30">6:30 PM (Dinner)</option>
                         <option value="19:30">7:30 PM (Dinner)</option>
                         <option value="20:30">8:30 PM (Dinner)</option>
@@ -416,7 +431,7 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
                         type="text"
                         value={reserveName}
                         onChange={(e) => setReserveName(e.target.value)}
-                        placeholder="e.g. Elena Vance"
+                        placeholder="e.g. Abdi Warsame"
                         required
                         className="w-full px-3.5 py-3 border border-[#D1CAC0] rounded-[2px] bg-[#FAF8F5] focus:outline-none focus:border-[#C59648] min-h-[44px]"
                       />
@@ -430,7 +445,7 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
                         type="email"
                         value={reserveEmail}
                         onChange={(e) => setReserveEmail(e.target.value)}
-                        placeholder="elena@example.com"
+                        placeholder="abdi@example.com"
                         required
                         className="w-full px-3.5 py-3 border border-[#D1CAC0] rounded-[2px] bg-[#FAF8F5] focus:outline-none focus:border-[#C59648] min-h-[44px]"
                       />
@@ -454,7 +469,7 @@ export const DiningView: React.FC<DiningViewProps> = ({ onNavigate }) => {
                       rows={2}
                       value={reserveNotes}
                       onChange={(e) => setReserveNotes(e.target.value)}
-                      placeholder="Anniversary celebration, gluten-free injera, sunset terrace table..."
+                      placeholder="Special occasion, VIP delegation table, Halal requests..."
                       className="w-full px-3.5 py-2.5 border border-[#D1CAC0] rounded-[2px] bg-[#FAF8F5] focus:outline-none focus:border-[#C59648]"
                     />
                   </div>

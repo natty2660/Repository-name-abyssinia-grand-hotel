@@ -1,4 +1,24 @@
-export type PageId = 'home' | 'rooms' | 'about' | 'dining' | 'gallery' | 'contact' | 'booking';
+export type PageId = 'home' | 'rooms' | 'about' | 'dining' | 'gallery' | 'contact' | 'booking' | 'admin';
+
+export type ReservationStatus = 'pending' | 'confirmed' | 'checked-in' | 'checked-out' | 'cancelled';
+
+export interface ReservationRecord {
+  id: string; // e.g. "DLH-49210"
+  referenceNumber: string;
+  formData: BookingFormData;
+  roomName: string;
+  roomType: string;
+  totalNights: number;
+  totalPrice: number;
+  status: ReservationStatus;
+  createdAt: string;
+  assignedRoomNumber?: string;
+  adminNotes?: string;
+  source?: 'online' | 'walk-in' | 'phone';
+  approvedAt?: string;
+  approvalMessage?: string;
+  telegramMessageId?: number;
+}
 
 export interface Room {
   id: string;
@@ -77,6 +97,10 @@ export interface BookingFormData {
   email: string;
   phone: string;
   specialRequests: string;
+  paymentMethod?: 'hotel' | 'telebirr' | 'cbe' | 'card';
+  isGroupBooking?: boolean;
+  roomCount?: number;
+  organizationName?: string;
 }
 
 export interface BookingConfirmation {

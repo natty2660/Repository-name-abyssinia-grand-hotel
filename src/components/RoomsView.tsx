@@ -63,7 +63,7 @@ export const RoomsView: React.FC<RoomsViewProps> = ({ onNavigate, selectedRoomId
             Sanctuaries of Quiet Elegance
           </h1>
           <p className="text-sm sm:text-lg text-[#5D564A] leading-relaxed font-light">
-            Each guestroom and suite at Abyssinia Grand Hotel balances rich Ethiopian craftsmanship with contemporary European luxury appointments, soundproofed architecture, and panoramic capital vistas.
+            Each guestroom and suite at Duule Luxury Hotel balances modern curved glass architecture with warm wood paneling, Italian marble bathrooms, and panoramic vistas across Jijiga.
           </p>
         </div>
 
@@ -280,7 +280,7 @@ export const RoomsView: React.FC<RoomsViewProps> = ({ onNavigate, selectedRoomId
                 />
               ) : (
                 <div className="bg-[#FAF6EE] flex items-center justify-center p-6 text-center text-xs text-[#8C8375] rounded-[2px] border border-[#EAE3D5]">
-                  Abyssinia Grand Hotel &bull; 5-Star Luxury
+                  Duule Luxury Hotel &bull; 5-Star Landmark
                 </div>
               )}
             </div>
